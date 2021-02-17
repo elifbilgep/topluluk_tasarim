@@ -2,26 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:topluluk_tasarim/const.dart';
 
 class ChangePassword extends StatelessWidget {
+  Size size;
   static GlobalKey<FormState> formKey = GlobalKey<FormState>();
   static Key key1 = new GlobalKey();
   static Key key2 = new GlobalKey();
   static Key key3 = new GlobalKey();
   @override
-  Size size;
   Widget build(BuildContext context) {
-    size = MediaQuery.of(context).size;
+    Size size = MediaQuery.of(context).size;
 
     return Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,
         body: Column(
-          children: [buildingHeaderAndTextForm(context), buildingBack(context)],
+          children: [
+            buildingHeaderAndTextForm(context, size),
+            buildingBack(context,size)
+          ],
         ));
   }
 
-  Widget buildingHeaderAndTextForm(context) {
+  Widget buildingHeaderAndTextForm(context, Size size) {
     return Container(
-      height: size.height*0.8,
+      height: size.height * 0.8,
       child: Stack(
         children: [
           Container(
@@ -142,24 +145,40 @@ class ChangePassword extends StatelessWidget {
     );
   }
 
-  Widget buildingBack(context) {
-     return Padding(
-      padding: EdgeInsets.only(left: MediaQuery.of(context).size.width*0.1,top: MediaQuery.of(context).size.width*0.08),
+  Widget buildingBack(context,size) {
+    return Padding(
+      padding: EdgeInsets.only(
+          left: MediaQuery.of(context).size.width * 0.1,
+          top: MediaQuery.of(context).size.width * 0.08),
       child: Row(
-        
         children: [
-          
-          Icon(Icons.arrow_back_ios,color: Colors.indigo,size: 30,),
-          Text("Geri", style: TextStyle(color: Colors.indigo,fontWeight: FontWeight.bold,fontSize: 20),),
-          SizedBox(width: size.width*0.4,),
+          Icon(
+            Icons.arrow_back_ios,
+            color: Colors.indigo,
+            size: 30,
+          ),
+          Text(
+            "Geri",
+            style: TextStyle(
+                color: Colors.indigo,
+                fontWeight: FontWeight.bold,
+                fontSize: 20),
+          ),
+          SizedBox(
+            width: size.width * 0.4,
+          ),
           Container(
             decoration: BoxDecoration(
               borderRadius: butonBorder,
               gradient: indigoButton,
             ),
-            height: size.height*0.1,
-            width: size.width*0.2,
-            child: Icon(Icons.save,color: Colors.white,size: 50,),
+            height: size.height * 0.1,
+            width: size.width * 0.2,
+            child: Icon(
+              Icons.save,
+              color: Colors.white,
+              size: 50,
+            ),
           )
         ],
       ),

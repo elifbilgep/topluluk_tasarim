@@ -5,7 +5,7 @@ List categories = [
   "Elektrik Elektronik Mühendisliği",
   "İnşaat Mühendisliği"
 ];
-List categories2 = ["Wie","Cs","Ea"];
+List categories2 = ["Wie", "Cs", "Ea"];
 const detailsColor = Color.fromRGBO(151, 175, 255, 1);
 const detailsColor2 = Color.fromRGBO(213, 217, 255, 1);
 
@@ -71,6 +71,12 @@ var splashBg = LinearGradient(
       Color.fromRGBO(255, 255, 255, 1),
       Color.fromRGBO(112, 128, 144, 1),
     ]);
+var textStyle4 = TextStyle(
+    color: Colors.grey.shade900,
+    fontFamily: "Catamaran",
+    fontSize: 18,
+    fontWeight: FontWeight.bold);
+
 var textStyle3 = TextStyle(
     color: Colors.grey.shade500,
     fontFamily: "Catamaran",
