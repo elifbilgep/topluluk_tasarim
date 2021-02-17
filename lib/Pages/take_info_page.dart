@@ -27,7 +27,7 @@ class _TakeInfoState extends State<TakeInfo> {
         body: Column(
           children: [
             SizedBox(
-              height: 80,
+              height: 100,
             ),
             buildHeader(),
             buildForm()
