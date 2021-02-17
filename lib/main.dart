@@ -10,6 +10,7 @@ import 'Pages/home_page_elif.dart';
 import 'Pages/myEvents.dart';
 import 'Pages/splash.dart';
 import 'Pages/qrRead.dart';
+import 'Pages/take_info_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
-      home: HomePage(),
+      home: TakeInfo(),
     );
   }
 }

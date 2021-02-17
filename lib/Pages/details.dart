@@ -18,7 +18,7 @@ class DetailsPage extends StatelessWidget {
         resizeToAvoidBottomInset: false,
         body: Column(
           children: [
-            buildHeader(size),
+            buildHeader(size, context),
             SizedBox(
               height: 150,
             ),
@@ -28,7 +28,7 @@ class DetailsPage extends StatelessWidget {
             ),
             buildButtons(size),
             SizedBox(
-              height: 20,
+              height: 35,
             ),
             buildBackAndQr(context)
           ],
@@ -37,9 +37,10 @@ class DetailsPage extends StatelessWidget {
     );
   }
 
-  Widget buildHeader(Size size) {
+  Widget buildHeader(Size size, context) {
     return Container(
       height: size.height * 0.25,
+      width: size.width,
       decoration: BoxDecoration(
           color: detailsColor,
           borderRadius: BorderRadius.only(
@@ -52,16 +53,33 @@ class DetailsPage extends StatelessWidget {
               blurRadius: 7,
             )
           ]),
-      child: Row(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 20.0),
-            child: Text(
+      child: Padding(
+        padding: const EdgeInsets.only(left: 30.0, bottom: 50, top: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Row(
+              children: [
+                Icon(
+                  Icons.arrow_back_sharp,
+                  color: Colors.white,
+                ),
+                GestureDetector(
+                  onTap: () => Navigator.pop(context),
+                  child: Text(
+                    "Geri",
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                ),
+              ],
+            ),
+            Text(
               "Ayrıntılar",
               style: headerText,
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -76,7 +94,7 @@ class DetailsPage extends StatelessWidget {
           overflow: Overflow.visible,
           children: [
             Container(
-              height: size.height * 0.25,
+              height: size.height * 0.2,
               width: size.width * 0.8,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
@@ -86,10 +104,6 @@ class DetailsPage extends StatelessWidget {
                 children: [
                   SizedBox(
                     height: size.width * 0.2,
-                  ),
-                  Text(
-                    "Tarih: 22.01.2020",
-                    style: miniHeader2,
                   ),
                   Text(
                     "Buluşma Yeri: Discord",
@@ -161,17 +175,15 @@ class DetailsPage extends StatelessWidget {
             Navigator.pop(context);
           },
           child: Container(
-            child: Row(
-              children: [
-                Icon(
-                  Icons.arrow_back_sharp,
-                  color: detailsColor,
-                ),
-                Text(
-                  "Geri",
-                  style: TextStyle(color: detailsColor, fontSize: 20),
-                )
-              ],
+            height: 50,
+            width: 50,
+            decoration: BoxDecoration(
+                gradient: indigoButton,
+                borderRadius: BorderRadius.circular(10)),
+            child: Icon(
+              Icons.file_download,
+              color: Colors.white,
+              size: 30,
             ),
           ),
         ),
