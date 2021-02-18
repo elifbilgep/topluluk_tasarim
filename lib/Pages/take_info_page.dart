@@ -22,6 +22,15 @@ class _TakeInfoState extends State<TakeInfo> {
     return Container(
       decoration: BoxDecoration(gradient: homePageBg),
       child: Scaffold(
+        floatingActionButton: Padding(
+          padding: const EdgeInsets.only(right: 5.0, bottom: 10),
+          child: FloatingActionButton(
+            onPressed: () {},
+            backgroundColor: Colors.white,
+            elevation: 10,
+            child: Icon(Icons.save),
+          ),
+        ),
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.transparent,
         body: Column(

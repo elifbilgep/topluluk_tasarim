@@ -22,8 +22,17 @@ class Splash extends StatelessWidget {
                     height: 25,
                   ),
                   buildCircle(size),
+                  SizedBox(
+                    height: 20,
+                  ),
                   buildRasAndEa(),
+                  SizedBox(
+                    height: 5,
+                  ),
                   buildCs(),
+                  SizedBox(
+                    height: 5,
+                  ),
                   buildWieKokPes(),
                 ],
               ),
@@ -78,59 +87,68 @@ class Splash extends StatelessWidget {
   }
 
   buildRasAndEa() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        Image.asset(
-          "assets/logo/beyazLogo/ras_w.png",
-          height: 50,
-          width: 135,
-          fit: BoxFit.cover,
-        ),
-        Image.asset(
-          "assets/logo/beyazLogo/ea_w.png",
-          height: 110,
-          width: 100,
-          fit: BoxFit.cover,
-        )
-      ],
+    return Container(
+      height: 50,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Image.asset(
+            "assets/logo/beyazLogo/ras_w.png",
+            height: 50,
+            width: 135,
+            fit: BoxFit.cover,
+          ),
+          Image.asset(
+            "assets/logo/beyazLogo/ea_w.png",
+            height: 110,
+            width: 100,
+            fit: BoxFit.cover,
+          )
+        ],
+      ),
     );
   }
 
   buildCs() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Image.asset(
-          "assets/logo/beyazLogo/cs_w.png",
-          height: 45,
-          width: 150,
-          fit: BoxFit.cover,
-        )
-      ],
+    return Container(
+      height: 50,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset(
+            "assets/logo/beyazLogo/cs_w.png",
+            height: 45,
+            width: 150,
+            fit: BoxFit.contain,
+          )
+        ],
+      ),
     );
   }
 
   buildWieKokPes() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        Image.asset(
-          "assets/logo/beyazLogo/wie_w.png",
-          height: 75,
-          width: 95,
-          fit: BoxFit.cover,
-        ),
-        SizedBox(
-          height: 25,
-        ),
-        Image.asset(
-          "assets/logo/beyazLogo/pes_w.png",
-          height: 75,
-          width: 100,
-          fit: BoxFit.cover,
-        ),
-      ],
+    return Container(
+      height: 60,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Image.asset(
+            "assets/logo/beyazLogo/wie_w.png",
+            height: 60,
+            width: 100,
+            fit: BoxFit.contain,
+          ),
+          SizedBox(
+            height: 25,
+          ),
+          Image.asset(
+            "assets/logo/beyazLogo/pes_w.png",
+            height: 75,
+            width: 100,
+            fit: BoxFit.contain,
+          ),
+        ],
+      ),
     );
   }
 }

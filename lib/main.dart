@@ -8,8 +8,8 @@ import 'Pages/create_notice.dart';
 import 'Pages/details.dart';
 import 'Pages/home_page_elif.dart';
 import 'Pages/myEvents.dart';
-import 'Pages/profil.dart';
-import 'Pages/splash.dart';
+import 'Pages/profil_elif.dart';
+import 'Pages/splash_elif.dart';
 import 'Pages/qrRead.dart';
 import 'Pages/take_info_page.dart';
 
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
-      home: Profile(),
+      home: TakeInfo(),
     );
   }
 }
